@@ -84,7 +84,6 @@ namespace KY_engine {
 		int* Color = new int(this->color.get_color_code()); 
 		for (const auto &elme : this->Graph) {
 			this->Window_gotoxy(_xy->first, _xy->second++, *Color); 
-			//this->gotoxy(_xy->first, _xy->second++);
 			std::cout << std::setw(elme.length()) << elme;
 		}
 		delete _xy , Color; 
