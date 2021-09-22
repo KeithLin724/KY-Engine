@@ -38,7 +38,7 @@ namespace KY_engine {
 		static Game_graph Build_graph(std::string path);
 
 		//text 
-		static Game_text Build_text(std::string str ,double x =0, double y  = 0 , int color = Game_color::INIT_WITE);
+		static Game_text Build_text(std::string str ,double x = 0, double y  = 0 , int color = Game_color::INIT_WITE);
 		static Game_text Build_text(std::string str, Game_point point, int color = Game_color::INIT_WITE);
 
 		
