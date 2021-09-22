@@ -1,10 +1,5 @@
-﻿// KYengine(easy).cpp : 此檔案包含 'main' 函式。程式會於該處開始執行及結束執行。
-//
-
+//KY_Game engine example
 #include <iostream>
-#include "Game_background.h"
-#include "Game_graph.h"
-#include "Game_Text.h"
 #include "KY_Game_Tool.h"
 using namespace std; 
 
