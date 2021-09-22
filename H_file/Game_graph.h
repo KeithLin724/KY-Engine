@@ -75,11 +75,7 @@ namespace KY_engine {
 		void up_left();
 		void up_right();
 		void down_left();
-		void down_right();
-
-		
-
-		
+		void down_right();	
 	};
 
 //fast cmd
