@@ -9,56 +9,50 @@ namespace KY_engine {
 
 	}
 
-	Game_background KY_Game_Tool::Build_background(std::string PATH) {
+	Game_background& KY_Game_Tool::Build_background(std::string PATH) {
 		return *(new Game_background(PATH)); 
 	}
 
-	Game_background KY_Game_Tool::Build_background(Quick_background_setup quick_backgrand_setup) {
+	Game_background& KY_Game_Tool::Build_background(Quick_background_setup quick_backgrand_setup) {
 		return *(new Game_background(quick_backgrand_setup)); 
 	}
 
-	Game_point KY_Game_Tool::Build_point(int x, int y) {
+	Game_point& KY_Game_Tool::Build_point(int x, int y) {
 		return *(new Game_point(x, y)); 
 	}
 
-	Game_point KY_Game_Tool::Build_point(long x, long y) {
+	Game_point& KY_Game_Tool::Build_point(long x, long y) {
 		return *(new Game_point((int)x, (int)y));
 	}
 
-	Game_point KY_Game_Tool::Build_point(double x, double y) {
+	Game_point& KY_Game_Tool::Build_point(double x, double y) {
 		return *(new Game_point(x, y));
 	}
 
-	Game_graph KY_Game_Tool::Build_graph(std::string path) {
+	Game_graph& KY_Game_Tool::Build_graph(std::string path) {
 		return *(new Game_graph(path));
 	}
 
-	Game_text KY_Game_Tool::Build_text(std::string str, double x, double y, int color) {
+	Game_text& KY_Game_Tool::Build_text(std::string str, double x, double y, int color) {
 		return *(new Game_text(str, x, y, color)); 
 	}
 
-	Game_text KY_Game_Tool::Build_text(std::string str, Game_point point, int color) {
+	Game_text& KY_Game_Tool::Build_text(std::string str, Game_point point, int color) {
 		return *(new Game_text(str, point, color)); 
 	}
 
-	Game_text KY_Game_Tool::Build_text(Game_text GText, Game_point point, int color) {
-		auto *thing = new Game_text(GText); 
-		thing->set_point(point); 
-		thing->set_color(color);
-		return *thing; 
+	Game_text& KY_Game_Tool::Build_text(Game_text GText, Game_point point, int color) {
+		return *(new Game_text(GText.get_Text(), point, color));
 	}
-	Game_text KY_Game_Tool::Build_text(Game_text GText, double x, double y, int color) {
-		auto* thing = new Game_text(GText);
-		thing->set_point(x, y);
-		thing->set_color(color);
-		return *thing;
+	Game_text& KY_Game_Tool::Build_text(Game_text GText, double x, double y, int color) {
+		return *(new Game_text(GText.get_Text(), x, y, color));
 	}
 	
-	Game_color KY_Game_Tool::Build_color(int color_text){
+	Game_color& KY_Game_Tool::Build_color(int color_text){
 		return *(new Game_color((color_text >= 1 && color_text < 255) ? color_text : Game_color::INIT_WITE));
 	}
-	Game_Event KY_Game_Tool::Build_event() {
-		return Game_Event();
+	Game_Event& KY_Game_Tool::Build_event() {
+		return *(new Game_Event());
 	}
 
 	void KY_Game_Tool::Draw_Graph(std::vector<std::vector<char>>& in_graph) {
