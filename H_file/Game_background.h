@@ -26,8 +26,7 @@ namespace KY_engine {
 			int Grid_W = 2, int Grid_H = 2 , int color = Game_color::INIT_WITE);
 
 	};
-
-	// Game_Color V  , Game_Event V ,Game_contro //(maybe)Game_error 
+	
 	class Game_background : protected Graph_Window  {
 
 	private:
@@ -35,9 +34,6 @@ namespace KY_engine {
 		int _W, _H, color;
 		// quit graph is use init base graph
 		// user can use the background from txt file 
-	/*protected:
-		void set_data_Both(int _W, int _H);
-		void set_data_Both(std::vector <std::pair <Game_point, char>> Graph_backgrand);*/
 
 	public:
 		// constructor 
