@@ -1,6 +1,5 @@
 #pragma once
 
-
 #ifndef KY_ENGINE_GAME_POINT_H
 #define KY_ENGINE_GAME_POINT_H
 
