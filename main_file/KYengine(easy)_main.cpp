@@ -1,9 +1,8 @@
-﻿// KYengine(easy).cpp : 此檔案包含 'main' 函式。程式會於該處開始執行及結束執行。
+// KYengine(easy).cpp : 此檔案包含 'main' 函式。程式會於該處開始執行及結束執行。
 //
 
 #include <iostream>
 #include "KY_Game_Tool.h"
-//#include <memory>
 using namespace std; 
 
 #define END_POINT 100, 100
