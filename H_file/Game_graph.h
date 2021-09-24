@@ -45,7 +45,7 @@ namespace KY_engine {
 
 		Game_point get_graph_point() const;
 
-		std::vector<std::vector<char>>& get_Graph();
+		std::vector<std::vector<char>> get_Graph();
 
 		// fun 
 		void graph_draw();
