@@ -32,7 +32,6 @@ namespace KY_engine {
 
 	private:
 		std::vector <std::pair <Game_point, char>> Graph_background;
-		//Graph_Window graph_drawer; 
 		int _W, _H, color;
 		// quit graph is use init base graph
 		// user can use the background from txt file 
@@ -55,9 +54,9 @@ namespace KY_engine {
 		// get 
 		std::vector<Game_point> get_Game_background_point_map(); 
 		std::vector<std::vector<char>> get_Game_background(); 
-		int get_high(); 
-		int get_wide(); 
-		int get_color(); 
+		int get_high() const; 
+		int get_wide() const;
+		int get_color() const; 
 
 		// function 
 		void draw();

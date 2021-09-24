@@ -26,8 +26,8 @@ namespace KY_engine {
 	};
 
 //fast cmd
-#define _KYGame_Event_ KY_engine::Game_Event
-#define _KYF_event_ KY_engine::Game_Event::Fast_Get_Event()
+#define _KYF_event_ KY_engine::Game_Event
+#define _KYF_event_fun_ KY_engine::Game_Event::Fast_Get_Event()
 
 }
 

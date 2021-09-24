@@ -26,7 +26,7 @@ namespace KY_engine {
 	public:
 		Game_text(); 
 		~Game_text(); 
-		Game_text(std::string Text , int color = Game_color::INIT_WITE); 
+		Game_text(std::string Text, int color = Game_color::INIT_WITE); 
 		Game_text(std::string Text, Game_point point , int color = Game_color::INIT_WITE);
 		Game_text(std::string Text, double x, double y , int color = Game_color::INIT_WITE);
 
@@ -37,10 +37,10 @@ namespace KY_engine {
 		void set_color(int color); 
 
 		// get 
-		std::string get_Text(); 
-		int get_length(); 
+		std::string get_Text() const; 
+		int get_length() const; 
 
-		int get_color(); 
+		int get_color() const; 
 		
 		// function 
 		void write();

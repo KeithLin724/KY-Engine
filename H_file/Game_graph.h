@@ -42,11 +42,11 @@ namespace KY_engine {
 		void set_point(double x, double y); 
 
 		//get
-		Game_color& get_color(); 
+		Game_color get_color() const; 
 
-		Game_point& get_graph_point();
+		Game_point get_graph_point() const;
 
-		std::vector<std::vector<char>> get_Graph();
+		std::vector<std::vector<char>>& get_Graph();
 
 		// fun 
 		void graph_draw();
@@ -75,7 +75,7 @@ namespace KY_engine {
 		void up_left();
 		void up_right();
 		void down_left();
-		void down_right();	
+		void down_right();
 	};
 
 //fast cmd

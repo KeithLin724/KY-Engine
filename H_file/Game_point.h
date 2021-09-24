@@ -20,9 +20,9 @@ namespace KY_engine {
 		~Game_point(); 
 
 		// get 
-		double get_x(); 
-		double get_y(); 
-		std::pair<GAME_PAIR_DOUBLE> get_point_to_pair();
+		double x(); 
+		double y(); 
+		std::pair<GAME_PAIR_DOUBLE>& get_point_to_pair();
 
 		// set 
 		Game_point& set_x(int x);

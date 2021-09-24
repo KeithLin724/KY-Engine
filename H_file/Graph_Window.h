@@ -25,8 +25,9 @@ namespace KY_engine {
 
         void Window_gotoxy(int xpos, int ypos, int color);
         void Window_gotoxy(Game_point& game_point, int color);
-
-
     };
+
+//fast cmd 
+#define _KYF_GW_ KY_engine::Graph_Window
 }
 #endif //!KY_ENGINE_GRAPH_WINDOW_H

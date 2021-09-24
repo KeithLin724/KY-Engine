@@ -49,7 +49,7 @@ namespace KY_engine {
 		//event 
 		static Game_Event& Build_event();
 
-		static void Draw_Graph(std::vector<std::vector<char>> &in_graph); 
+		static void Draw_Graph(std::vector<std::vector<char>>& in_graph);
 
 		void add(Game_background& bg);
 		void add(Game_graph& graph); 

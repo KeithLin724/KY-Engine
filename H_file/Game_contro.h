@@ -1,12 +1,15 @@
 #pragma once
 
-namespace KY_engine{
+#ifndef KY_ENGINE_GAME_CONTRO_H
+#define KY_ENGINE_GAME_CONTRO_H
+
+namespace KY_engine {
+
 	class Game_contro {// abstract class 
 	protected:
 		int UP, DOWN, LEFT, RIGHT; 
 
 	public:
-
 		Game_contro(int up = 1, int down = 1, int left = 1, int right = 1) ;
 		~Game_contro();
 
@@ -36,6 +39,13 @@ namespace KY_engine{
 
 
 	};
+//fast cmd
+#define _KYF_Contro_ KY_engine::Game_contro
 }
+
+#endif // !KY_ENGINE_GAME_CONTRO_H
+
+
+
 
 
