@@ -143,7 +143,7 @@ namespace KY_engine {
 		return this->graph_point; 
 	}
 
-	std::vector<std::vector<char>>& Game_graph::get_Graph() {
+	std::vector<std::vector<char>> Game_graph::get_Graph() {
 		std::vector<std::vector<char>> graph; 
 		for (auto &emle : this->Graph) {
 			graph.emplace_back(emle.begin(), emle.end());
