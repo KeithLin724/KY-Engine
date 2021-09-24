@@ -14,15 +14,15 @@ namespace KY_engine {
 		
 	}
 
-	double Game_point::get_x() {
+	double Game_point::x() {
 		return this->X;
 	}
-	double Game_point::get_y() {
+	double Game_point::y() {
 		return this->Y; 
 	}
 
-	std::pair<GAME_PAIR_DOUBLE> Game_point::get_point_to_pair() {
-		return std::pair<GAME_PAIR_DOUBLE>(this->X, this->Y);
+	std::pair<GAME_PAIR_DOUBLE>& Game_point::get_point_to_pair() {
+		return *(new std::pair<GAME_PAIR_DOUBLE>(this->X, this->Y));
 	}
 
 	Game_point& Game_point::set_x(int x) {

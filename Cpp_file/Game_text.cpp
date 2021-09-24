@@ -66,14 +66,14 @@ namespace KY_engine {
 
 	// get function 
 
-	std::string Game_text::get_Text() {
+	std::string Game_text::get_Text() const{
 		return this->text; 
 	}
-	int Game_text::get_length() {
-		return this->length; 
+	int Game_text::get_length() const {
+		return this->length;
 	}
 
-	int Game_text::get_color() {
+	int Game_text::get_color() const{
 		return this->text_color;
 	}
 

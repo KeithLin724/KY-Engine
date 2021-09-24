@@ -8,7 +8,7 @@ namespace KY_engine {
 
 	}
 
-	char Game_Event::get_event(){
+	char Game_Event::get_event() {
 		auto e = _getch();
 		this->event_memory = e; 
 		return e;

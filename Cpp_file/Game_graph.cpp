@@ -76,7 +76,6 @@ namespace KY_engine {
 		this->_W = MAX; 
 		this->_H = this->Graph.size(); 
 		
-
 	}
 
 	void Game_graph::set_color(int color_code) {
@@ -84,18 +83,17 @@ namespace KY_engine {
 	}
 
 	void Game_graph::graph_draw() {
-		std::pair<GAME_PAIR_INT>* _xy = new std::pair<GAME_PAIR_INT>(this->graph_point.get_x(), this->graph_point.get_y());
+		std::pair<GAME_PAIR_INT>* _xy = new std::pair<GAME_PAIR_INT>(this->graph_point.x(), this->graph_point.y());
 		int* Color = new int(this->color.get_color_code()); 
 		for (const auto &elme : this->Graph) {
 			this->Window_gotoxy(_xy->first, _xy->second++, *Color); 
-			//this->gotoxy(_xy->first, _xy->second++);
 			std::cout << std::setw(elme.length()) << elme;
 		}
 		delete _xy , Color; 
 	}
 
 	void Game_graph::graph_clean() {
-		std::pair<GAME_PAIR_INT>* _xy = new std::pair<GAME_PAIR_INT>(this->graph_point.get_x(), this->graph_point.get_y());
+		std::pair<GAME_PAIR_INT>* _xy = new std::pair<GAME_PAIR_INT>(this->graph_point.x(), this->graph_point.y());
 		std::string* Clean = new std::string(); 
 
 		for (const auto& elme : this->Graph) {
@@ -117,7 +115,7 @@ namespace KY_engine {
 	// protecded 
 	void Game_graph::set_point_both(Game_point point) { // set both point 
 		this->graph_point.set_point(point);
-		this->right_point.set_point(point.get_x() + this->_W, point.get_y() + this->_H);
+		this->right_point.set_point(point.x() + this->_W, point.y() + this->_H);
 	}
 
 	void Game_graph::set_point_both(double x, double y) {
@@ -137,19 +135,18 @@ namespace KY_engine {
 		this->set_point_both(x, y);
 	}
 	// get point 
-	Game_color& Game_graph::get_color() {
+	Game_color Game_graph::get_color() const{
 		return this->color; 
 	}
 
-	Game_point& Game_graph::get_graph_point() {
+	Game_point Game_graph::get_graph_point() const{
 		return this->graph_point; 
 	}
 
-	std::vector<std::vector<char>> Game_graph::get_Graph() {
+	std::vector<std::vector<char>>& Game_graph::get_Graph() {
 		std::vector<std::vector<char>> graph; 
 		for (auto &emle : this->Graph) {
 			graph.emplace_back(emle.begin(), emle.end());
-			//graph.push_back(std::vector<char>(emle.begin(), emle.end())); 
 		}
 		return graph; 
 

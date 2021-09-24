@@ -25,13 +25,13 @@ namespace KY_engine {
     }
 
     void Graph_Window::gotoxy(Game_point& game_point) {
-        this->scrn.X = game_point.get_x(); this->scrn.Y = game_point.get_y();
+        this->scrn.X = game_point.x(); this->scrn.Y = game_point.y();
         SetConsoleCursorPosition(this->hOuput, this->scrn);
         return;
     }
 
     void Graph_Window::Window_gotoxy(Game_point& game_point, int color) {
-        this->scrn.X = game_point.get_x(); this->scrn.Y = game_point.get_y();
+        this->scrn.X = game_point.x(); this->scrn.Y = game_point.y();
         SetConsoleCursorPosition(this->hOuput, this->scrn);
         SetConsoleTextAttribute(this->hOuput, color);
         return;
