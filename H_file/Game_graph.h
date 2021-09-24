@@ -36,7 +36,6 @@ namespace KY_engine {
 		void set_to_sqrt(); 
 		void set_color(int color_code); 
 
-
 		void set_point(Game_point &game_point);
 		void set_point(int x , int y);
 		void set_point(double x, double y); 
