@@ -31,26 +31,6 @@ namespace KY_engine {
 		this->color = Game_color::INIT_WITE; 
 	}
 
-	/*inline void PrintGp() {
-		string outptr = {};
-		for (int y = 0; y < H; y++) {
-			for (int x = 0; x < W; x++) {
-				XYptr.Super_gotoxy(x, y, Bcolor);
-				if (y % 4 == 0) {
-					x % 7 == 0 ? outptr = "+" : outptr = "-";
-					cout << outptr;
-				}
-				else {
-					x % 7 == 0 ? outptr = "|" : outptr = " ";
-					cout << outptr;
-				}
-			}
-			cout << "\n";
-		}
-		return;
-	}*/
-
-
 	Game_background::Game_background(Quick_background_setup quit_set_up) {
 		this->_H = 0;
 		this->_W = 0;
@@ -73,18 +53,6 @@ namespace KY_engine {
 		this->_H = quit_set_up._H;
 		this->_W = quit_set_up._W;
 		this->color = quit_set_up.color; 
-		/*char angle, line, V_graph; // Quick_backgrand_setup
-		int _W, _H;
-
-		struct GRID {
-			bool Grid_mode;
-			int _W, _H;
-			GRID(bool Grid_mode = false , int Grid_W = 2, int Grid_H = 2) {
-				this->Grid_mode = Grid_mode;
-				this->_W = Grid_W;
-				this->_H = Grid_H;
-			}
-		}Grid;*/
 
 		if (quit_set_up.Grid.Grid_mode) {
 			int number_W = quit_set_up._W / (quit_set_up.Grid._W - 1),
@@ -92,19 +60,6 @@ namespace KY_engine {
 
 			for (int y = 0; y < this->_H; y++) {
 				for (int x = 0; x < this->_W; x++) {
-					//this->Graph_backgrand.push_back(std::pair<Game_point, char>(Game_point() , )); 
-					//const int       H = 17;  // H
-					//const int       W = 29;  // W 
-					/*XYptr.Super_gotoxy(x, y, Bcolor);
-					if (y % 4 == 0) {
-						x % 7 == 0 ? outptr = "+" : outptr = "-";
-						cout << outptr;
-					}
-					else {
-						x % 7 == 0 ? outptr = "|" : outptr = " ";
-						cout << outptr;
-					}*/
-
 					if (y % number_H == 0) {
 						x % number_W == 0 ? 
 							this->Graph_background.emplace_back(Game_point(x, y), quit_set_up.angle) :
@@ -126,13 +81,10 @@ namespace KY_engine {
 						x % (this->_W - 1) == 0 ?
 							this->Graph_background.emplace_back(Game_point(x, y) , quit_set_up.angle):
 							this->Graph_background.emplace_back(Game_point(x, y), quit_set_up.line);
-							/*this->Graph_background.push_back(std::pair<GAME_CHAR>(Game_point(x, y), quit_set_up.angle)) :
-							this->Graph_background.push_back(std::pair<GAME_CHAR>(Game_point(x, y), quit_set_up.line));*/
 					}
 					else {
 						if (x % (this->_W - 1) == 0) {
 							this->Graph_background.emplace_back(Game_point(x, y), quit_set_up.V_graph);
-							//this->Graph_background.push_back(std::pair<GAME_CHAR>(Game_point(x, y), quit_set_up.V_graph));
 						}
 					}
 				}
@@ -155,8 +107,6 @@ namespace KY_engine {
 				for (auto& emle : in_line) {
 					if (emle != ' ') {
 						this->Graph_background.emplace_back(Game_point(XY.first, XY.second), emle); 
-						/*this->Graph_background
-							.push_back(std::pair<GAME_CHAR>(Game_point(XY.first, XY.second), emle));*/
 					}
 					XY.first++;
 				}
@@ -206,16 +156,13 @@ namespace KY_engine {
 			for (int x = 0; x < this->_W; x++) {
 				if (this->Graph_background[i].first == Game_point(x, y)) {
 					part.emplace_back(this->Graph_background[i].second); 
-					//part.push_back(this->Graph_background[i].second);
 					i++;
 				}
 				else {
 					part.emplace_back(' '); 
-					//part.push_back(' '); 
 				}
 			}
 			RETURN.emplace_back(part); 
-			//RETURN.push_back(part); 
 			part.clear();
 		}
 
@@ -225,7 +172,6 @@ namespace KY_engine {
 	// function 
 	void Game_background::draw() {
 		for (auto &emle : this->Graph_background) {
-			//this->gotoxy(emle.first); 
 			this->Window_gotoxy(emle.first, this->color); 
 			std::cout <<std::setw(1) <<emle.second;
 		}
