@@ -49,8 +49,9 @@ namespace KY_engine {
 		//event 
 		static Game_Event& Build_event();
 
-		static void Draw_Graph(std::vector<std::vector<char>>& in_graph);
+		
 
+		// class function 
 		void add(Game_background& bg);
 		void add(Game_graph& graph); 
 		void add(Game_text& text); 
@@ -59,7 +60,9 @@ namespace KY_engine {
 		void add(std::vector<Game_text>& text_arr); 
 
 		void Draw_init(Game_point end_point = _KYF_NULL_point_);
-
+		
+		static void Write_text(std::string text , _KYF_point_ point , int color = _KYF_color_::INIT_WITE); 
+		static void Draw_Graph(std::vector<std::vector<char>>& in_graph , _KYF_point_ point , int color = _KYF_color_::INIT_WITE);
 	};
 
 //fast cmd
