@@ -55,13 +55,24 @@ namespace KY_engine {
 		return *(new Game_Event());
 	}
 
-	void KY_Game_Tool::Draw_Graph(std::vector<std::vector<char>>& in_graph) {
-		for (auto &elme : in_graph) {
-			for (auto &each : elme) {
+	void KY_Game_Tool::Draw_Graph(std::vector<std::vector<char>>& in_graph, _KYF_point_ point, int color ) {
+		
+		std::pair<GAME_PAIR_DOUBLE>* xy = 
+			(point == _KYF_NULL_point_) ? new std::pair<GAME_PAIR_DOUBLE>(0,0) :
+			new std::pair<GAME_PAIR_DOUBLE>(point.x(), point.y());
+		
+		_KYF_GW_* gw = new _KYF_GW_();
+		for (auto& elme : in_graph) {
+			xy->first = point.x(); 
+			for (auto& each : elme) {
+				gw->Window_gotoxy(xy->first, xy->second, color); 
 				std::cout << each;
+				xy->first++; 
 			}
-			std::cout << "\n"; 
+			xy->second++; 
+			std::cout << "\n";
 		}
+		delete xy, gw; 
 	}
 
 	void KY_Game_Tool::add(Game_background& bg) {
@@ -98,6 +109,13 @@ namespace KY_engine {
 			end_point.set_point(this->graph_all.back().get_graph_point());
 		}
 		thing.Window_gotoxy(end_point, Game_color::INIT_WITE);
+	}
+	void KY_Game_Tool::Write_text(std::string text, _KYF_point_ point, int color) {
+		Game_point* copy = (point == _KYF_NULL_point_) ? new Game_point(0, 0) : new Game_point(point);
+		Graph_Window* gw = new Graph_Window();
+		gw->Window_gotoxy(point, color); 
+		std::cout << text; 
+		delete copy, gw; 
 	}
 }
 
