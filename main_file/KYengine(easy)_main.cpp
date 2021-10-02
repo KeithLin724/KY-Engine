@@ -1,8 +1,7 @@
-﻿// KYengine(easy).cpp
+// KYengine(easy).cpp
 
 #include <iostream>
 #include "KY_Game_Tool.h"
-//#include <memory>
 using namespace std; 
 
 #define END_POINT 100, 100
@@ -35,13 +34,10 @@ int main() {
     thing_tool.add(backgrand); 
 
     thing_tool.Draw_init(); 
-
-    //text2.eraser(); 
     
     _KYbuild_::Write_text("Hello world\n", _KYF_point_(10, 10));
 
     while (event.get_event() != 'q') {
-		//std::cout << event.to_HEX() << "\n";
         if (event.get_event_memory() == 'w') {
             graph2.up();
         }
@@ -69,28 +65,3 @@ int main() {
 
     return 0; 
 }
-
-
-/*int main() {
-    KY_engine::Game_Text out_text("hello", 2., 1., KY_engine::Game_color::BLUE);
-
-     KY_engine::Quick_backgrand_setup quit_set_up;
-     KY_engine::Game_Backgrand game_backgrand(quit_set_up);
-
-     KY_engine::Game_graph spider_man("Spider_ASCII_art.txt");
-
-
-
-     spider_man.set_point(0, 50);
-
-     game_backgrand.draw();
-     out_text.write();
-
-     spider_man.graph_draw();
-
-     KY_engine::Graph_Window MOVE;
-     MOVE.gotoxy(END_POINT);
-
-    
-    return 0;
-}*/
