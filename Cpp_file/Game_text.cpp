@@ -10,7 +10,10 @@ namespace KY_engine {
 		this->point = Game_point();
 	}
 	Game_text::~Game_text() {
-
+		this->text.clear(); 
+		this->point.clear();
+		this->length = NULL;
+		this->text_color = NULL;
 	}
 
 	// set both length 
@@ -19,12 +22,8 @@ namespace KY_engine {
 		this->length = text_in.length();
 	}
 
-	std::string& Game_text::out_null(int length) {
-		std::string no(" ");
-		for (int i = 1; i < length; i ++ ) {
-			no += " "; 
-		}
-		return no; 
+	std::string& Game_text::out_null(int length) {	
+		return std::string().assign(length, ' '); 
 	}
 
 	// constructor 
@@ -44,7 +43,7 @@ namespace KY_engine {
 	Game_text::Game_text(std::string Text, double x, double y , int color) 
 		:Game_contro() {
 		this->set_string(Text);
-		this->point = Game_point(x, y); 
+		this->point.set_point(x, y); 
 		this->text_color = color;
 	}
 
@@ -57,7 +56,7 @@ namespace KY_engine {
 	}
 
 	void Game_text::set_point(double x, double y) {
-		this->point = Game_point(x, y);
+		this->point.set_point(x, y);
 	}
 
 	void Game_text::set_color(int color){
