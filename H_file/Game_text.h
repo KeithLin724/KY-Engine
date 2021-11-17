@@ -10,7 +10,7 @@
 #include "Game_contro.h"
 
 namespace KY_engine {
-	class Game_text : protected Graph_Window  , public Game_contro{
+	class Game_text : protected Graph_Window, public Game_contro {
 
 	private:
 		std::string text;
@@ -39,6 +39,7 @@ namespace KY_engine {
 		// get 
 		std::string get_Text() const; 
 		int get_length() const; 
+		Game_point get_point() const; 
 
 		int get_color() const; 
 		
