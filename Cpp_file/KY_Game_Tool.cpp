@@ -59,7 +59,7 @@ namespace KY_engine {
 		
 		std::pair<GAME_PAIR_DOUBLE>* xy = 
 			(point == _KYF_NULL_point_) ? new std::pair<GAME_PAIR_DOUBLE>(0,0) :
-			new std::pair<GAME_PAIR_DOUBLE>(point.x(), point.y());
+										  new std::pair<GAME_PAIR_DOUBLE>(point.x(), point.y());
 		
 		_KYF_GW_* gw = new _KYF_GW_();
 		for (auto& elme : in_graph) {
@@ -106,7 +106,17 @@ namespace KY_engine {
 
 		Graph_Window thing; 
 		if (end_point == _KYF_NULL_point_) {
-			end_point.set_point(this->graph_all.back().get_graph_point());
+			Game_point end; 
+			if (!this->graph_all.empty()) {
+				end = this->graph_all.back().get_graph_point(); 
+			}
+			else if (!this->text_all.empty()) {
+				end = this->text_all.back().get_point(); 
+			}
+			else if (this->bg.get_Game_background_point_map().back() != _KYF_NULL_point_) {
+				end = this->bg.get_Game_background_point_map().back(); 
+			}
+			end_point.set_point(end.add_x(1));
 		}
 		thing.Window_gotoxy(end_point, Game_color::INIT_WITE);
 	}

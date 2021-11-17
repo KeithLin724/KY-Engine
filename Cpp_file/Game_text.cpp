@@ -23,7 +23,10 @@ namespace KY_engine {
 	}
 
 	std::string& Game_text::out_null(int length) {	
-		return std::string().assign(length, ' '); 
+		std::string no;
+		no.assign(length - 1, ' ');
+		no.push_back('\0'); 
+		return no; 
 	}
 
 	// constructor 
@@ -70,6 +73,11 @@ namespace KY_engine {
 	}
 	int Game_text::get_length() const {
 		return this->length;
+	}
+
+	Game_point Game_text::get_point() const
+	{
+		return this->point;
 	}
 
 	int Game_text::get_color() const{
